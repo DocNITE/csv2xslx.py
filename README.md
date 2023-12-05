@@ -1,2 +1,2 @@
-# csv2xslx.py
-Small importer from AIDA64 reports to xslx tables (Onlyy Summary Information)
+# What is this?
+Small script for importing `.csv` data from AIDA64 reports to `.xslx` table.
