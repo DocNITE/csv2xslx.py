@@ -21,6 +21,7 @@ TODO: Сделать игнор для Ввод, DMI, некоторых пол�
 SUM_INFO_DEF = "Суммарная информация"
 FONT_DEF = "Times New Roman"
 ROWS_MAX_DEF = 256
+MAIN_TITLE_SIZE_DEF = 20
 TITLE_SIZE_DEF = 14
 CONTENT_SIZE_DEF = 12
 A_ROW_WIDTH_DEF = 11
@@ -69,6 +70,7 @@ def getFileInfo(file_name):
 """
 def toFrame(data):
     result = []
+    result.append(["", "", ""])
     old_group = ""
     for arr in data:
         print(arr)
@@ -133,6 +135,13 @@ def writeExcel(data, name):
             if s_ai != 0:
                 sheet.merge_cells("A"+str(s_ai)+":A"+str(ai-1))
                 s_ai = 0
+            alignment_title = Alignment(horizontal='center')
+            border_title = Border(bottom=border_style)
+            sheet['A1'].value = "There should b ename"
+            sheet.merge_cells('A1:C1')
+            sheet['A1'].font = Font(name=FONT_DEF, size=MAIN_TITLE_SIZE_DEF)
+            sheet['A1'].border = border_title
+            sheet['A1'].alignment = alignment_title
             workbook.save(name)
            
 """
