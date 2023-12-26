@@ -37,7 +37,9 @@ IGNORE_ITEMS = [
 "DirectX", "Edge", "Internet Explorer", 
 "Дата / Время", "SMART-статус жёстких дисков", 
 "Контроллер хранения данных", "Вход в домен",
-"Коммуникационный порт"]
+"Коммуникационный порт", "USB-устройство",
+"Контроллер USB3", "Контроллер USB2", "Контроллер USB1",
+"Батарея"]
 
 PINTERS_DEF = "Принтер"
 GPU_DEF = "Видеоадаптер"
@@ -118,7 +120,7 @@ def toFrame(data):
         # shit statement
         if checkIgnoreTitle(arr[0]) != True:
             if checkIgnoreItem(arr[1]) != True:
-                if arr[1] != PINTERS_DEF and arr[2] != GPU_DEF:
+                if arr[1] != PINTERS_DEF and arr[1] != GPU_DEF:
                     result.append(["", arr[1], arr[2]])
                 elif arr[1] == PINTERS_DEF and curr_printers <= MAX_PRINTERS:
                     result.append(["", arr[1], arr[2]])
